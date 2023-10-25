@@ -1,5 +1,8 @@
 package parrot;
 
+import static parrot.ParrotTypeEnum.AFRICAN;
+import static parrot.ParrotTypeEnum.EUROPEAN;
+
 public class Parrot {
 
     private final ParrotTypeEnum type;
@@ -15,23 +18,22 @@ public class Parrot {
         this.voltage = voltage;
         this.isNailed = isNailed;
 
-        parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
+        if (type == EUROPEAN) {
+            parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
+        } else if (type == AFRICAN) {
+            parrot = new AfricanParrot(numberOfCoconuts, voltage, isNailed);
+        }
     }
 
     public double getSpeed() {
         return switch (type) {
-            case EUROPEAN -> parrot.getBaseSpeed();
-            case AFRICAN -> Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
+            case EUROPEAN, AFRICAN -> parrot.getSpeed();
             case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
         };
     }
 
     private double getBaseSpeed(double voltage) {
         return Math.min(24.0, voltage * getBaseSpeed());
-    }
-
-    private double getLoadFactor() {
-        return 9.0;
     }
 
     private double getBaseSpeed() {

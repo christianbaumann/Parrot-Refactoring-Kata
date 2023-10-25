@@ -13,7 +13,7 @@ public class EuropeanParrot implements ParrotInterface {
     }
 
     @Override
-    public double getBaseSpeed() {
+    public double getSpeed() {
         return 12.0;
     }
 

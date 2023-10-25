@@ -2,7 +2,7 @@ package parrot;
 
 public interface ParrotInterface {
 
-    double getBaseSpeed();
+    double getSpeed();
 
     String getCry();
 }
