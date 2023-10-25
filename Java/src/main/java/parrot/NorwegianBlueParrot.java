@@ -6,8 +6,8 @@ public class NorwegianBlueParrot implements ParrotInterface {
     private final boolean isNailed;
 
     private final double baseSpeed = 12.0;
-    private final String cryPositiveVoltage = "Bzzzzzz";
-    private final String cryVoltageZeroOrBelow = "...";
+    private final String cryVoltageIsPostive = "Bzzzzzz";
+    private final String cryVoltageIsZeroOrBelow = "...";
     private final double minimalSpeed = 24.0;
 
     public NorwegianBlueParrot(double voltage, boolean isNailed) {
@@ -17,7 +17,7 @@ public class NorwegianBlueParrot implements ParrotInterface {
 
     @Override
     public String getCry() {
-        return voltage > 0 ? cryPositiveVoltage : cryVoltageZeroOrBelow;
+        return voltage > 0 ? cryVoltageIsPostive : cryVoltageIsZeroOrBelow;
     }
 
     @Override
