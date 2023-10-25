@@ -18,26 +18,15 @@ public class Parrot {
         this.voltage = voltage;
         this.isNailed = isNailed;
 
-        if (type == EUROPEAN) {
-            parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
-        } else if (type == AFRICAN) {
-            parrot = new AfricanParrot(numberOfCoconuts, voltage, isNailed);
-        }
-    }
-
-    public double getSpeed() {
-        return switch (type) {
-            case EUROPEAN, AFRICAN -> parrot.getSpeed();
-            case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
+        parrot = switch (type){
+            case EUROPEAN -> new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
+            case AFRICAN -> new AfricanParrot(numberOfCoconuts, voltage, isNailed);
+            case NORWEGIAN_BLUE -> new NorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
         };
     }
 
-    private double getBaseSpeed(double voltage) {
-        return Math.min(24.0, voltage * getBaseSpeed());
-    }
-
-    private double getBaseSpeed() {
-        return 12.0;
+    public double getSpeed() {
+        return parrot.getSpeed();
     }
 
     public String getCry() {
