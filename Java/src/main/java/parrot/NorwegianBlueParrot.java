@@ -2,16 +2,15 @@ package parrot;
 
 public class NorwegianBlueParrot implements ParrotInterface {
 
-    private final int numberOfCoconuts;
     private final double voltage;
     private final boolean isNailed;
+
     private double baseSpeed = 12.0;
     private double minimalSpeed = 24.0;
     private String cryPositiveVoltage = "Bzzzzzz";
     private String cryVoltageZeroOrBelow = "...";
 
-    public NorwegianBlueParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
-        this.numberOfCoconuts = numberOfCoconuts;
+    public NorwegianBlueParrot(double voltage, boolean isNailed) {
         this.voltage = voltage;
         this.isNailed = isNailed;
     }
