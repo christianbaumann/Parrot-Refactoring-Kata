@@ -42,8 +42,7 @@ public class Parrot {
 
     public String getCry() {
         return switch (type) {
-            case EUROPEAN -> parrot.getCry();
-            case AFRICAN -> "Sqaark!";
+            case EUROPEAN, AFRICAN -> parrot.getCry();
             case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
         };
     }

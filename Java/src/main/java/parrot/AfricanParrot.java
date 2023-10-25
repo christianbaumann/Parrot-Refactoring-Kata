@@ -19,7 +19,7 @@ public class AfricanParrot implements ParrotInterface {
 
     @Override
     public String getCry() {
-        return null;
+        return "Sqaark!";
     }
 
     private double getBaseSpeed() {
