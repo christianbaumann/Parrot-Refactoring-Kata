@@ -12,11 +12,11 @@ public class Parrot {
         };
     }
 
-    public double getSpeed() {
-        return parrot.getSpeed();
-    }
-
     public String getCry() {
         return parrot.getCry();
+    }
+
+    public double getSpeed() {
+        return parrot.getSpeed();
     }
 }
