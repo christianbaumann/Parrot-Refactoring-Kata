@@ -16,4 +16,9 @@ public class EuropeanParrot implements ParrotInterface {
     public double getBaseSpeed() {
         return 12.0;
     }
+
+    @Override
+    public String getCry() {
+        return "Sqoork!";
+    }
 }
