@@ -5,6 +5,9 @@ public class AfricanParrot implements ParrotInterface {
     private final int numberOfCoconuts;
     private final double voltage;
     private final boolean isNailed;
+    private double baseSpeed = 12.0;
+    private double loadFactor = 9.0;
+    private String cry = "Sqaark!";
 
     public AfricanParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
         this.numberOfCoconuts = numberOfCoconuts;
@@ -19,14 +22,14 @@ public class AfricanParrot implements ParrotInterface {
 
     @Override
     public String getCry() {
-        return "Sqaark!";
+        return cry;
     }
 
     private double getBaseSpeed() {
-        return 12.0;
+        return baseSpeed;
     }
 
     private double getLoadFactor() {
-        return 9.0;
+        return loadFactor;
     }
 }

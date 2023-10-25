@@ -5,6 +5,8 @@ public class EuropeanParrot implements ParrotInterface {
     private final int numberOfCoconuts;
     private final double voltage;
     private final boolean isNailed;
+    private double speed = 12.0;
+    private String cry = "Sqoork!";
 
     public EuropeanParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
         this.numberOfCoconuts = numberOfCoconuts;
@@ -14,11 +16,11 @@ public class EuropeanParrot implements ParrotInterface {
 
     @Override
     public double getSpeed() {
-        return 12.0;
+        return speed;
     }
 
     @Override
     public String getCry() {
-        return "Sqoork!";
+        return cry;
     }
 }
