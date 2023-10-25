@@ -4,9 +4,9 @@ public class AfricanParrot implements ParrotInterface {
 
     private final int numberOfCoconuts;
 
-    private double baseSpeed = 12.0;
-    private double loadFactor = 9.0;
-    private String cry = "Sqaark!";
+    private final double baseSpeed = 12.0;
+    private final double loadFactor = 9.0;
+    private final String cry = "Sqaark!";
 
     public AfricanParrot(int numberOfCoconuts) {
         this.numberOfCoconuts = numberOfCoconuts;

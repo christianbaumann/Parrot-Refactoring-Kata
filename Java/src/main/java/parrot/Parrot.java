@@ -2,7 +2,7 @@ package parrot;
 
 public class Parrot {
 
-    private ParrotInterface parrot;
+    private final ParrotInterface parrot;
 
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         parrot = switch (type){
