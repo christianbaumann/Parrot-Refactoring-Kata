@@ -19,7 +19,7 @@ public class NorwegianBlueParrot implements ParrotInterface {
 
     @Override
     public String getCry() {
-        return null;
+        return voltage > 0 ? "Bzzzzzz" : "...";
     }
 
     private double getBaseSpeed() {

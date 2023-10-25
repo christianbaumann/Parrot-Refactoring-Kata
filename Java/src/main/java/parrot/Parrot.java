@@ -1,8 +1,5 @@
 package parrot;
 
-import static parrot.ParrotTypeEnum.AFRICAN;
-import static parrot.ParrotTypeEnum.EUROPEAN;
-
 public class Parrot {
 
     private final ParrotTypeEnum type;
@@ -30,9 +27,6 @@ public class Parrot {
     }
 
     public String getCry() {
-        return switch (type) {
-            case EUROPEAN, AFRICAN -> parrot.getCry();
-            case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
-        };
+        return parrot.getCry();
     }
 }
