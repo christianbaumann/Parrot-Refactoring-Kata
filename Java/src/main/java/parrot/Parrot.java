@@ -7,16 +7,20 @@ public class Parrot {
     private final double voltage;
     private final boolean isNailed;
 
+    private ParrotInterface parrot;
+
     public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         this.type = type;
         this.numberOfCoconuts = numberOfCoconuts;
         this.voltage = voltage;
         this.isNailed = isNailed;
+
+        parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
     }
 
     public double getSpeed() {
         return switch (type) {
-            case EUROPEAN -> getBaseSpeed();
+            case EUROPEAN -> parrot.getBaseSpeed();
             case AFRICAN -> Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
             case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
         };
